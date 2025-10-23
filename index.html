@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Modern - Tema Gelap</title>
+    <style>
+        /* Reset dan Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #e0e0e0;
+    overflow-x: hidden;
+    opacity: 0;
+    animation: fadeInBody 1.5s ease-in-out forwards;
+}
+@keyframes fadeInBody {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header */
+header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: slideDown 1s ease-out;
+}
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #00d4ff;
+    text-shadow: 0 0 10px #00d4ff;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin-left: 30px;
+}
+.nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+.nav-links a:hover {
+    color: #00d4ff;
+    text-shadow: 0 0 10px #00d4ff;
+}
+
+/* Section Umum */
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 100px; /* Adjusted padding to avoid overlap with fixed header */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+h1, h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #00d4ff;
+    text-shadow: 0 0 20px #00d4ff;
+}
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #00d4ff;
+}
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.detail-section {
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+    animation: fadeInDetail 1.5s ease-out 1s both;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+@keyframes fadeInDetail {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+.detail-item {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid #00d4ff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.detail-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
+}
+.detail-section h4 {
+    font-size: 1.4em;
+    color: #00d4ff;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.detail-section ul {
+    list-style: none;
+    padding: 0;
+}
+.detail-section li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+.detail-section li::before {
+    content: "▶";
+    color: #00d4ff;
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+}
+.detail-section p {
+    margin-bottom: 0;
+    font-size: 1.1em;
+}
+
+/* Perkenalan */
+#about {
+    background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+}
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url('img/PPP.png'); /* Pastikan file gambar ada di folder img/ */
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 30px #00d4ff;
+    animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+    to {
+        box-shadow: 0 0 50px #00d4ff;
+    }
+}
+
+/* Portofolio */
+#portfolio {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    padding: 100px 20px;
+}
+.sub-section {
+    margin-bottom: 50px;
+}
+.sub-section h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.sub-section p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #b0b0b0;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Disesuaikan untuk rapi, lebih kecil dari 300 agar pas */
+    gap: 20px;
+    justify-items: center;
+}
+.gallery img {
+    width: 100%;
+    height: 200px; /* Tetap proporsional */
+    object-fit: cover; /* Menjaga rasio asli tanpa distorsi */
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Menunjukkan bisa diklik - ini yang membuatnya terlihat bisa diklik */
+}
+.gallery img:hover {
+    transform: scale(1.05); /* Hover efek kecil, tapi modal untuk zoom penuh */
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+}
+.item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleIn 1s ease-out forwards;
+    animation-delay: calc(var(--i) * 0.2s);
+    width: 100%;
+    max-width: 280px; /* Sesuai grid */
+}
+@keyframes scaleIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.item:hover {
+    transform: scale(1.02); /* Hover ringan */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.item img, .item video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.item h4 {
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+/* Karya Website */
+#websites {
+    background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+}
+.website-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+.website-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleIn 1s ease-out forwards;
+    animation-delay: calc(var(--i) * 0.2s);
+    width: 100%;
+    max-width: 250px;
+}
+.website-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+}
+.website-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.website-item h4 {
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+/* Modal untuk Gambar Portfolio */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.5s ease-out;
+}
+.image-modal-content {
+    background: rgba(15, 15, 15, 0.95);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #00d4ff;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px; /* Lebih besar untuk melihat jelas */
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+    position: relative; /* Ditambahkan agar tombol close bisa diposisikan */
+}
+.image-modal .close {
+    color: #00d4ff;
+    position: absolute; /* Diposisikan relatif terhadap modal-content */
+    top: 10px;
+    right: 25px;
+    font-size: 35px; /* Sedikit lebih besar */
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 210; /* Pastikan di atas gambar */
+}
+.image-modal .close:hover {
+    color: #fff;
+}
+.image-modal img {
+    width: 100%;
+    height: auto; /* Menjaga rasio asli tanpa distorsi */
+    max-height: 70vh; /* Batasi tinggi agar tidak overflow */
+    object-fit: contain; /* Menampilkan gambar penuh tanpa crop, menjaga rasio */
+    border-radius: 10px;
+}
+
+/* Modal untuk Website */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.5s ease-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.modal-content {
+    background: rgba(15, 15, 15, 0.95);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #00d4ff;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+}
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.close {
+    color: #00d4ff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover {
+    color: #fff;
+}
+.modal img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background: rgba(15, 15, 15, 0.9);
+    padding: 20px;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 2em;
+    }
+    .nav-links {
+        flex-direction: column;
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .detail-section {
+        text-align: center;
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
+    .detail-item {
+        padding: 15px;
+    }
+    .detail-section li {
+        padding-left: 15px;
+    }
+    .website-gallery, .gallery {
+        grid-template-columns: 1fr; /* Single column on mobile for better layout */
+    }
+    .modal-content, .image-modal-content {
+        margin: auto;
+        display: block;
+        width: 90%;
+        max-width: 100%; /* Full width on mobile */
+        border-radius: 10px;
+    }
+    .image-modal img {
+        max-height: 60vh; /* Adjust for mobile */
+    }
+    section {
+        padding: 140px 20px 100px; /* Adjusted for mobile */
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Portofolio</div>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="profile-img"></div>
+            <h1>Selamat Datang di Portofolio Saya</h1>
+            <p>Halo! Saya adalah Zakky Dhiyaulhaq, seorang yang passionate tentang Fotografi dan Desain Grafis. Saya menciptakan hal-hal yang indah dan fungsional. Mari kita jelajahi karyaku!</p>
+            <div class="detail-section">
+                <div class="detail-item">
+                    <h4>Profil Singkat</h4>
+                    <ul>
+                        <li>Saya adalah seorang pelajar yang memiliki pengalaman dalam bidang dokumentasi dan desain.</li>
+                        <li>Mulai dari SMP, saya telah berkembang melalui berbagai proyek yang menantang dan inovatif.</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-item">
+                    <h4>Bidang Keahlian</h4>
+                    <ul>
+                        <li>Passion saya terletak pada desain grafis, editing video, fotografi.</li>
+                        <li>Saya ahli dalam aplikasi editing seperti Capcut, Canva, Adobe Premiere, dan lain sebagainya, saya selalu mencari cara baru untuk mengekspresikan kreativitas.</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-item">
+                    <h4>Nilai, Visi, dan Gaya Kerja</h4>
+                    <ul>
+                        <li>Nilai saya adalah inovasi, keterampilan, dan kolaborasi.</li>
+                        <li>Visi saya adalah menciptakan karya yang tidak only estetis tetapi juga berdampak positif.</li>
+                        <li>Gaya kerja saya membentuk tim yang solid, berusaha profesional, kreatif, dan berorientasi pada hasil yang memuaskan klien.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Karya Saya</h2>
+            <p>Berikut adalah beberapa proyek yang telah saya kerjakan.</p>
+            
+            <div class="sub-section">
+                <h3>Desainer</h3>
+                <p>Koleksi desain grafis yang mencakup berbagai macam jenis.</p>
+                <div class="gallery">
+                    <div class="item" style="--i: 1;">
+                        <img src="img/1.png" alt="Desain 1" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Desain 1</h4>
+                    </div>
+                    <div class="item" style="--i: 2;">
+                        <img src="img/2.png" alt="Desain 2" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Desain 2</h4>
+                    </div>
+                    <div class="item" style="--i: 3;">
+                        <img src="img/3.png" alt="Desain 3" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Desain 3</h4>
+                    </div>
+                    <div class="item" style="--i: 4;">
+                        <img src="img/4.png" alt="Desain 4" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Desain 4</h4>
+                    </div>
+                    <div class="item" style="--i: 5;">
+                        <img src="img/5.png" alt="Desain 5" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Desain 4</h4>
+                    </div>
+                                        <div class="item" style="--i: 6;">
+                        <img src="img/6.png" alt="Desain 6" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Desain 6</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sub-section">
+                <h3>Editing Video</h3>
+                <p>Proyek editing video untuk tugas sekolah yang dilakukan tanpa bantuan ai dan sebagainya.</p>
+                <div class="gallery">
+                    <div class="item" style="--i: 7;">
+                        <video controls preload="none">
+                            <source src="img/1.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung video.
+                        </video>
+                        <h4>Proyek Video 1</h4>
+                    </div>
+                    <div class="item" style="--i: 8;">
+                        <video controls preload="none">
+                            <source src="img/2.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung video.
+                        </video>
+                        <h4>Proyek Video 2</h4>
+                    </div>
+                    <div class="item" style="--i: 9;">
+                        <video controls preload="none">
+                            <source src="img/3.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung video.
+                        </video>
+                        <h4>Proyek Video 3</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sub-section">
+                <h3>Hasil Foto</h3>
+                <p>Fotografi dengan seprofesional mungkin.</p>
+                <div class="gallery"> <div class="item" style="--i: 10;">
+                        <img src="img/1.jpg" alt="Foto 1" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Foto 1</h4>
+                    </div>
+                    <div class="item" style="--i: 11;">
+                        <img src="img/2.jpg" alt="Foto 2" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Foto 2</h4>
+                    </div>
+                    <div class="item" style="--i: 12;">
+                        <img src="img/3.jpg" alt="Foto 3" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Foto 3</h4>
+                    </div>
+                    <div class="item" style="--i: 13;">
+                        <img src="img/4.jpg" alt="Foto 4" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Foto 4</h4>
+                    </div>
+                    <div class="item" style="--i: 14;">
+                        <img src="img/5.jpg" alt="Foto 5" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Foto 5</h4>
+                    </div>
+                    <div class="item" style="--i: 15;">
+                        <img src="img/6.jpg" alt="Foto 6" onclick="openImageModal(this.src)" loading="lazy">
+                        <h4>Proyek Foto 6</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="websites">
+        <div class="container">
+            <h2>Karya Website Saya</h2>
+            <p>Berikut adalah beberapa website yang telah saya buat, klik untuk melihat detail.</p>
+            <div class="website-gallery">
+                <div class="website-item" style="--i: 1;" onclick="openModal('modal1')">
+                    <img src="img/WEB (2).png" alt="Website 1" loading="lazy">
+                    <h4>Website 1</h4>
+                </div>
+                <div class="website-item" style="--i: 2;" onclick="openModal('modal2')">
+                    <img src="img/WEB (3).png" alt="Website 2" loading="lazy">
+                    <h4>Website 2</h4>
+                </div>
+                <div class="website-item" style="--i: 3;" onclick="openModal('modal3')">
+                    <img src="img/WEB (4).png" alt="Website 3" loading="lazy">
+                    <h4>Juknis Website</h4>
+                </div>
+                <div class="website-item" style="--i: 4;" onclick="openModal('modal4')">
+                    <img src="img/WEB (5).png" alt="Website 4" loading="lazy">
+                    <h4>Profile Website</h4>
+                </div>
+                <div class="website-item" style="--i: 5;" onclick="openModal('modal5')">
+                    <img src="img/WEB (1).png" alt="Website 5" loading="lazy">
+                    <h4>CV Website</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h3>Website 1</h3>
+            <img src="img/WEB (2).png" alt="Website Portofolio" loading="lazy">
+            <p><a href="https://website-mtsn-3-sleman.github.io/Internet-Utama-Dark-Matsanega/" target="_blank">Website 1</a></p>
+
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h3>Website 2</h3>
+           <img src="img/WEB (3).png" alt="Website Portofolio" loading="lazy">
+            <p><a href="https://website-mtsn-3-sleman.github.io/Internet-dark/" target="_blank">Website 2</a></p>
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h3>Juknis Website</h3>
+           <img src="img/WEB (4).png" alt="Website Portofolio" loading="lazy">
+           <p><a href="https://linktr.ee/haornaspadmawidya" target="_blank">Website Event Haornas</a></p>
+           <p>Dibuat dengan bantuan aplikasi lain.</p>
+        </div>
+    </div>
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h3>Profile Website</h3>
+            <img src="img/WEB (5).png" alt="Website Portofolio" loading="lazy">
+           <p><a href="https://zakky-dhiyaulhaq.github.io/About-Me/" target="_blank">Profile Website</a></p>
+        </div>
+    </div>
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h3>CV Website</h3>
+            <img src="img/WEB (1).png" alt="Website Portofolio" loading="lazy">
+           <p><a href="https://zakky-dhiyaulhaq.github.io/CV/" target="_blank">CV Website</a></p>
+        </div>
+    </div>
+
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Kontak Saya</h2>
+            <p>Jika Anda tertarik dengan karyaku atau ingin berkolaborasi, jangan ragu untuk menghubungi saya!</p>
+            <div class="detail-section">
+                <div class="detail-item">
+                    <h4>Informasi Kontak</h4>
+                    <ul>
+                        <li>Email: zakkydhiyaulhaq08@gmail.com</li>
+                        <li>Telepon: 0882-0063-43167</li>
+                        <li>Instagram: @zakkydhq</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+    <h4>Kirim Pesan</h4>
+    <form action="https://formspree.io/f/xzzjnppp" method="POST">
+        <input type="text" name="name" placeholder="Nama Anda" required 
+               style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #00d4ff; border-radius: 5px; background: rgba(255,255,255,0.1); color: #e0e0e0;">
+        <input type="email" name="email" placeholder="Email Anda" required 
+               style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #00d4ff; border-radius: 5px; background: rgba(255,255,255,0.1); color: #e0e0e0;">
+        <textarea name="message" placeholder="Pesan Anda" required 
+                  style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #00d4ff; border-radius: 5px; background: rgba(255,255,255,0.1); color: #e0e0e0; height: 100px;"></textarea>
+        <button type="submit" 
+                style="padding: 10px 20px; background: #00d4ff; color: #0f0f0f; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+            Kirim
+        </button>
+    </form>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="imageModal" class="image-modal">
+        <div class="image-modal-content">
+            <span class="close" id="closeImageModal">&times;</span>
+            <img id="modalImage" src="" alt="Gambar Karya Diperbesar" loading="lazy">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Zakky Dhiyaulhaq.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Modal functions (Website)
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // ==== LOGIKA JAVASCRIPT BARU UNTUK IMAGE MODAL ====
+
+        // Dapatkan elemen-elemen untuk modal gambar
+        const imgModal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeImgBtn = document.getElementById('closeImageModal');
+
+        // Fungsi untuk membuka modal gambar
+        function openImageModal(src) {
+            imgModal.style.display = 'block';
+            modalImg.src = src;
+        }
+
+               // Fungsi untuk menutup modal gambar
+        function closeImageModal() {
+            imgModal.style.display = 'none';
+            modalImg.src = ''; // Bersihkan src agar tidak memuat gambar terus
+        }
+
+        // Tutup modal saat tombol X diklik
+        closeImgBtn.addEventListener('click', closeImageModal);
+
+        // Tutup modal saat area luar gambar diklik
+        window.addEventListener('click', function(e) {
+            if (e.target === imgModal) {
+                closeImageModal();
+            }
+        });
+    </script>
+</body>
+</html>
